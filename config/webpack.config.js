@@ -64,6 +64,7 @@ const useTypeScript = fs.existsSync(paths.appTsConfig);
 // Get the path to the uncompiled service worker (if it exists).
 const swSrc = paths.swSrc;
 
+
 // style files regexes
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
@@ -88,6 +89,8 @@ const hasJsxRuntime = (() => {
 module.exports = function (webpackEnv) {
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
+
+  console.log('saul >>>>>>>>>>>>>>>>>>>>>> paths', webpackEnv, paths)
 
   // Variable used for enabling profiling in Production
   // passed into alias object. Uses a flag if passed into the build command
@@ -566,14 +569,15 @@ module.exports = function (webpackEnv) {
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
-          {},
+          {
+          },
           {
             inject: true,
             template: paths.appHtml,
           },
           isEnvProduction
             ? {
-              // inlineSource: '.(js|css)$',
+              inlineSource: '.(js|css)$',
                 minify: {
                   removeComments: true,
                   collapseWhitespace: true,
@@ -593,10 +597,10 @@ module.exports = function (webpackEnv) {
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       // https://github.com/facebook/create-react-app/issues/5358
-      // isEnvProduction &&
-      //   shouldInlineRuntimeChunk && 
-      //   new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin),
-      // ,
+      isEnvProduction &&
+        shouldInlineRuntimeChunk && 
+        new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin),
+      ,
       isEnvProduction &&
         shouldInlineRuntimeChunk &&
         new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime-.+[.]js/]),
