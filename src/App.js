@@ -62,6 +62,10 @@ function App() {
   console.log('saul >>>>>>sate', state)
   const dispatch = useDispatch()
 
+  useEffect(() => {
+    // dispatch(getUser())
+  }, [])
+
 
   return (
     <MemoryRouter>
@@ -70,7 +74,9 @@ function App() {
         <nav>
           <div
             onClick={() => {
-              dispatch({ type: 'word/change', payload: 'xxxxxxx' })
+              // dispatch({ type: 'word/change', payload: 'xxxxxxx' })
+    dispatch(getUser())
+
             }}
           >
             该点点滴滴
@@ -115,6 +121,14 @@ function App() {
       {userText}
     </div>
   );
+}
+
+function getUser() {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch({ type: 'word/change', payload: 'fuck' })
+    }, 1000);
+  }
 }
 
 function Home() {
