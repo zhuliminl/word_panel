@@ -51,7 +51,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>xxxx</h1>
+      <div style={{
+        fontSize: 30,
+        color: 'red'
+      }}>小石头</div>
         <h1>{textSelected}</h1>
           {userText}
     </div>
