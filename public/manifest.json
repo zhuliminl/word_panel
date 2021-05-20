@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ward Panel",
+  "name": "a web widget for learning vocabulary",
   "icons": [
     {
       "src": "favicon.ico",
