@@ -66,17 +66,33 @@ function App() {
     // dispatch(getUser())
   }, [])
 
+  const [isShowModal, setShowModal] = useState(false)
+
+  const modalStyles = {
+    overlay: {
+      // display: 'fixed'
+    },
+  };
 
   return (
     <MemoryRouter>
-      <div>{state.word.name}</div>
+      <div style={{
+        fontSize: 90,
+        fontFamily: 'Novus-Regular'
+      }}>{state.word.name}</div>
       <div>
         <nav>
           <div
             onClick={() => {
+              setShowModal(!isShowModal)
+            }}
+          >
+            modal 显示
+          </div>
+          <div
+            onClick={() => {
               // dispatch({ type: 'word/change', payload: 'xxxxxxx' })
-    dispatch(getUser())
-
+              dispatch(getUser())
             }}
           >
             该点点滴滴
@@ -93,6 +109,7 @@ function App() {
             </li>
           </ul>
         </nav>
+
 
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}

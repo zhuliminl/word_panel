@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@font-face {
+  font-family: Novus-Regular;
+  /* src: local('Novus-Regular'), url(./fonts/Novus-Regular.otf) format('opentype'); */
+  /* src: url(./fonts/Novus-Regular.otf) format('opentype'); */
+  src: url("http://47.104.237.42:80/static/font/Novus-Regular.otf") format('opentype');
+}
