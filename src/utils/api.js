@@ -8,6 +8,7 @@ const creatAPI = (baseURL) => {
     Accept: 'application/json',
     headers: {
       'Content-Type': 'application/json',
+      "Access-Control-Allow-Origin": "*"
     }
   }
 
@@ -37,5 +38,7 @@ const creatAPI = (baseURL) => {
 }
 
 // const baseURL = 'http://47.104.237.42:80/users'
-const baseURL = 'http://47.104.237.42:80'
+// const baseURL = 'https://47.104.237.42:80'
+const baseURL = 'https://localhost:8091'
+// const baseURL = 'http://47.104.237.42:80'
 export default creatAPI(baseURL)

@@ -37,7 +37,8 @@
   position: fixed;
   top:0px;
   /* left: 10px; */
-  left: 0px;
+  /* left: 0px; */
+  right: 0px;
   z-index: 99999999999999999;
   /* border-radius: 10px; */
   /* border: solid 1px #F2F2F2; */

@@ -16,7 +16,7 @@ import api from './utils/api'
 function App() {
   console.log('saul >>>>>> 网页 APP 打印', window.chrome, window)
 
-  const [userText, setUserText] = useState('');
+  const [userText, setUserText] = useState('xx');
   const [textSelected, setSelectedText] = useState('')
 
   const handleUserKeyPress = useCallback(event => {
@@ -40,6 +40,7 @@ function App() {
       const selection = _document.selection
       var sel = (selection && selection.createRange().text) ||
         (window.getSelection && window.getSelection().toString());
+      console.log('saul sel', sel)
 
       setSelectedText(sel)
 
@@ -95,8 +96,7 @@ function App() {
               setShowModal(!isShowModal)
             }}
           >
-            modal 显示
-      {userText}
+            modal 显示{textSelected}
           </div>
           <div
             onClick={() => {
