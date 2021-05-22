@@ -10,10 +10,12 @@ import {
 } from "react-router-dom";
 import styles from './styles'
 import { useSelector, shallowEqual, useDispatch } from 'react-redux'
+import api from './utils/api'
 
 
 function App() {
   console.log('saul >>>>>> 网页 APP 打印', window.chrome, window)
+
   const [userText, setUserText] = useState('');
   const [textSelected, setSelectedText] = useState('')
 
@@ -40,6 +42,12 @@ function App() {
         (window.getSelection && window.getSelection().toString());
 
       setSelectedText(sel)
+
+      api.get('/users').then(res => {
+        console.log('saul get users', res)
+      }).catch(err => {
+        console.log('saul api get error', err)
+      })
 
       // alert(sel);
       // window.chrome.runtime.sendMessage({
@@ -88,6 +96,7 @@ function App() {
             }}
           >
             modal 显示
+      {userText}
           </div>
           <div
             onClick={() => {
