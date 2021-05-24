@@ -44,8 +44,15 @@ function App() {
 
       setSelectedText(sel)
 
+      fetch('https://www.zhuliming.cn/users')
+      .then(response => response.json())
+      .then(data => console.log('saul fuckkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk fethc Daa',data))
+      .catch(err => {
+        console.log(err)
+      })
+
       api.get('/users').then(res => {
-        console.log('saul get users', res)
+        console.log('saul ________________________get users', res)
       }).catch(err => {
         console.log('saul api get error', err)
       })

@@ -3,12 +3,13 @@ import axios from 'axios';
 const creatAPI = (baseURL) => {
 
   const apiConfigOptions = {
+    crossdomain: true,
     baseURL,
     timeout: 50000,
     Accept: 'application/json',
     headers: {
       'Content-Type': 'application/json',
-      "Access-Control-Allow-Origin": "*"
+      // "Access-Control-Allow-Origin": "*"
     }
   }
 
@@ -39,6 +40,6 @@ const creatAPI = (baseURL) => {
 
 // const baseURL = 'http://47.104.237.42:80/users'
 // const baseURL = 'https://47.104.237.42:80'
-const baseURL = 'https://localhost:8091'
+const baseURL = 'https://www.zhuliming.cn'
 // const baseURL = 'http://47.104.237.42:80'
 export default creatAPI(baseURL)

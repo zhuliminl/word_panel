@@ -17,5 +17,5 @@ code {
   font-family: Novus-Regular;
   /* src: local('Novus-Regular'), url(./fonts/Novus-Regular.otf) format('opentype'); */
   /* src: url(./fonts/Novus-Regular.otf) format('opentype'); */
-  src: url("http://47.104.237.42:80/static/font/Novus-Regular.otf") format('opentype');
+  src: url("https://www.zhuliming.cn/static/font/Novus-Regular.otf") format('opentype');
 }
